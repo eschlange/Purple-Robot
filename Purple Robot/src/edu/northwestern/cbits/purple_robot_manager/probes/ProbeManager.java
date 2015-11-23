@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
@@ -69,6 +68,7 @@ import edu.northwestern.cbits.purple_robot_manager.probes.devices.wear.WearLivew
 import edu.northwestern.cbits.purple_robot_manager.probes.devices.wear.WearMagneticFieldProbe;
 import edu.northwestern.cbits.purple_robot_manager.probes.media.AudioCaptureProbe;
 import edu.northwestern.cbits.purple_robot_manager.probes.sensors.AccelerometerSensorProbe;
+import edu.northwestern.cbits.purple_robot_manager.probes.services.GoogleFitProbe;
 import edu.northwestern.cbits.purple_robot_manager.probes.sensors.LightSensorProbe;
 import edu.northwestern.cbits.purple_robot_manager.probes.services.FitbitBetaProbe;
 import edu.northwestern.cbits.purple_robot_manager.probes.studies.LivewellActivityCountsProbe;
@@ -724,6 +724,12 @@ public class ProbeManager
                 LightSensorProbe light = (LightSensorProbe) probe;
 
                 if (light.name(context).equalsIgnoreCase(name))
+                    found = true;
+            } else if (probe instanceof GoogleFitProbe)
+            {
+                GoogleFitProbe googleFit = (GoogleFitProbe) probe;
+
+                if (googleFit.name(context).equalsIgnoreCase(name))
                     found = true;
             }
 

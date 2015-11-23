@@ -59,6 +59,7 @@
         <item>services.FacebookEventsProbe</item>
         <item>services.GooglePlacesProbe</item>
         <item>services.WeatherUndergroundProbe</item>
+        <item>services.GoogleFitProbe</item>
 
         <item>builtin.RandomNoiseProbe</item>
         <item>builtin.NfcProbe</item>
